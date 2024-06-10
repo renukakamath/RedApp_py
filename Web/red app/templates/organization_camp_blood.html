@@ -1,0 +1,40 @@
+{% include 'organization_header.html' %}
+<center>
+	<form method="post">
+	<h1><u><b>ADD CAMP BLOOD DETAILS</b></u></h1>
+	<table class="table" style="width: 500px">
+		<tr>
+			<th>BLOOD GROUP</th>
+			<td><select name="blood" class="form-control">
+				{% for row in data['blood']%}
+				<option value="{{row['group_id']}}">{{row['group']}}</option>
+				{% endfor %}
+			</select></td>
+		</tr>
+		<tr>
+			<th>UNITS</th>
+			<td><input type="text" name="units" class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="submit" class="btn btn-success"></td>
+		</tr>
+	</table>
+	<h1><u>ADDED DETAILS</u></h1>
+	<table class="table" style="width: 900px">
+		<tr>
+			<th>SNO</th>
+			<th>GROUP</th>
+			<th>UNITS</th>
+		</tr>
+		{% for row in data['camp_blood'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['group']}}</td>
+			<td>{{row['no_of_units']}}</td>
+			<td><a href="?action=delete&id={{row['camp_id']}}&did={{row['cblood_id']}}" class="btn btn-warning">DELETE</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</form>
+{% include 'footer.html' %}

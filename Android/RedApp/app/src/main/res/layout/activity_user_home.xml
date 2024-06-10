@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background"
+    tools:context=".UserHome">
+    <Button
+        android:id="@+id/userpro"
+        android:layout_width="140dp"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:layout_marginBottom="15dp"
+        android:text="User Profile" />
+
+
+    <Button
+        android:id="@+id/bt_camps"
+        android:layout_width="140dp"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:layout_marginBottom="15dp"
+        android:text="Camps" />
+
+    <Button
+        android:id="@+id/bt_request"
+        android:layout_width="140dp"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:layout_marginBottom="15dp"
+        android:text="Request" />
+
+    <Button
+        android:id="@+id/bt_requests"
+        android:layout_width="140dp"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:layout_marginBottom="15dp"
+        android:text="My requests" />
+
+<!--    <Button-->
+<!--        android:id="@+id/don"-->
+<!--        android:layout_width="140dp"-->
+<!--        android:textColor="#fff"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/button_bg"-->
+<!--        android:layout_marginBottom="15dp"-->
+<!--        android:text="View Donations" />-->
+
+    <Button
+        android:id="@+id/bt_logout"
+        android:layout_width="140dp"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:text="Logout" />
+
+</LinearLayout>

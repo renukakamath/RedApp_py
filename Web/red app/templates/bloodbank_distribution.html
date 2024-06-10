@@ -1,0 +1,48 @@
+	{% include 'blood_bank_header.html' %}
+<center>
+	
+	<form method="post">
+		<h1><u><b>SEND Distribution</b></u></h1>
+		<table class="table" style="width: 500px;">
+			<tr>
+				<th>BLOOD GROUP</th>
+				<td><select name="group" class="form-control">
+					{% for row in data['blood'] %}
+					<option value="{{row['group_id']}}">{{row['group']}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<th>UNIT</th>
+				<td><input type="text" name="unit" class="form-control" required=""></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-success"></td>
+			</tr>
+		</table>
+		
+	<h1><u><b>VIEW Distribution</b></u></h1>
+	<table  class="table" style="width:500px">
+		<tr>
+			<th>SNO</th>
+			<th>BLOOD GROUP</th>
+			<th>UNIT</th>
+			<th>DATE & TIME</th>
+			
+
+		</tr>
+		{% for row in data['requ'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['group']}}</td>
+			<td>{{row['unit_distribution']}}</td>
+			<td>{{row['date_time']}}</td>
+			
+		</tr>
+		{% endfor %}
+	</table>
+	
+	</form>
+</center>
+{% include 'footer.html' %}

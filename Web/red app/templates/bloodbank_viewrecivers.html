@@ -1,0 +1,33 @@
+{% include 'blood_bank_header.html' %}
+
+<h1><u><b>VIEW RECEIVERS</b></u></h1>
+	<form>
+		<table class="table" style="width:500px">
+				<tr>
+				<th>Sno</th>
+				<th>NAME</th>
+				
+				<th>AGE</th>
+				<th>BLOOD GROUP</th>
+				<th>PHONE</th>
+				<th>EMAIL</th>
+			</tr>
+			{% for row in data['res']%}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['first_name']}}{{row['last_name']}}</td>
+				
+				<td>{{row['age']}}</td>
+				<td>{{row['group']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				<td><a href="bloodbank_distribution?rid={{row['user_id']}}" class="btn btn-warning">SEND DISTRIBUTION</a></td>
+
+
+			</tr>
+			{% endfor %}
+		</table>
+		
+	</form>
+</center>
+{% include 'footer.html' %}

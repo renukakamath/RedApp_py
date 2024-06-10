@@ -1,0 +1,59 @@
+{% include 'blood_bank_header.html' %}
+<center>
+	<form>
+		<h1><u><b>REQUEST FOR BLOOD</b></u></h1>
+		<table class="table" style="width: 900px">
+			<tr>
+				<th>SNO</th>
+				<th>USER NAME</th>
+				<th>BLOOD GROUP</th>
+				<th>REQUIRED UNITS</th>
+				<th>DATE</th>
+				<th>CONTACT NUMBER</th>
+				<th>STATUS</th>
+			</tr>
+			{% for row in data['request'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['username']}}</td>
+				<td>{{row['group']}}</td>
+				<td>{{row['unit_required']}}</td>
+				<td>{{row['date_time']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['status']}}</td>
+				{% if row['status']=='pending' %}
+				<td><a href="?action=accept&id={{row['request_id']}}" class="btn btn-success">CONFIRMATION</a></td>
+					<td><a href="?action=reject&id={{row['request_id']}}" class="btn btn-success">REJECT</a></td>
+				{% endif %}
+			</tr>
+			{% endfor %}
+		</table><br><br>
+		{% if data['accept']%}
+		<h1><u><b>ACCEPTED REQUEST</b></u></h1>
+		<table class="table" style="width: 900px">
+			<tr>
+				<th>SNO</th>
+				<th>USER NAME</th>
+				<th>BLOOD GROUP</th>
+				<th>REQUIRED UNITS</th>
+				<th>DATE</th>
+				<th>CONTACT NUMBER</th>
+				<th>STATUS</th>
+			</tr>
+			{% for row in data['accept'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['username']}}</td>
+				<td>{{row['group']}}</td>
+				<td>{{row['unit_required']}}</td>
+				<td>{{row['date_time']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['status']}}</td>
+				
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+	</form>
+</center>
+{% include 'footer.html' %}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".Userprofile">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receiver Details"
+        android:textSize="30dp"
+        android:textColor="#1E1B1B"
+        android:textStyle="bold"
+
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:textStyle="bold"
+        android:textColorHint="#121212"
+        android:layout_marginTop="10dp"
+        android:inputType="textPersonName"
+        android:hint="enter firstname"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <EditText
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:textStyle="bold"
+        android:textColorHint="#0C0C0C"
+        android:layout_marginTop="10dp"
+        android:inputType="textPersonName"
+        android:hint="enter your last_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="57dp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:textStyle="bold"
+        android:textColorHint="#101010"
+        android:layout_marginTop="10dp"
+        android:inputType="number"
+        android:hint="Enter your number"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="433dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:textStyle="bold"
+        android:textColorHint="#0E0E0E"
+        android:layout_marginTop="10dp"
+        android:inputType="textEmailAddress"
+        android:hint="enter your email"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="516dp" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:textStyle="bold"
+        android:textColorHint="#0B0A0A"
+        android:inputType="textPersonName"
+        android:hint="enter your age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="586dp" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+
+        android:textStyle="bold"
+        android:textColorHint="#0E0E0E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="647dp" />
+</LinearLayout>

@@ -1,0 +1,35 @@
+{% include 'admin_header.html' %}
+<center>
+
+
+	<h1><u><b>MANAGE BLOOD GROUP</b></u></h1>
+	<form method="post">
+		<table class="table" style="width:500px">
+			<tr>
+				<th>GROUP NAME:</th>
+				<td><input type="text" required name="name" class="form-control"></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="submit" value="ADD" class="btn btn-success"></td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<h2><u><b>REGISTERED BLOOD GROUPS</b></u></h2>
+		<table class="table" style="width:500px">
+			<tr>
+				<th>Sno:</th>
+				<th>GROUP NAME:</th>
+			</tr>
+			{% for row in data['res1']%}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['group']}}</td>
+				<td><a href="?d={{row['group_id']}}" class="btn btn-danger">DELETE</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+</center>
+{% include 'footer.html' %}

@@ -1,0 +1,126 @@
+{% include 'organization_header.html' %}
+<center>
+		<h1><u><b><a href="?action=bloodbank" class="btn btn-danger">VIEW REGISTERED BLOODBANKS</a></b></u></h1>
+		<h1><u><b><a href="?action=camp" class="btn btn-danger">VIEW PLANED CAMPS</a></b></u></h1>
+		<br>
+		<br>
+		{% if data['hospital'] %}
+
+		<h1><u><b>REGISTERED HOSPITALS</b></u></h1>
+	<form>
+		<table class="table" style="width:500px">
+			<tr>
+				<th>Sno</th>
+				<th>NAME</th>
+				<th>PLACE</th>
+				<th>LATITUDE</th>
+				<th>LONGITUDE</th>
+				<th>PHONE</th>
+				<th>EMAIL</th>
+			</tr>
+			{% for row in data['hospital'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['hospital']}}</td>
+				<td>{{row['place']}}</td>
+				<td>{{row['latitude']}}</td>
+				<td>{{row['longitude']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				<td><a href="organization_Manage_Camp?action=hospital&id={{row['hospital_id']}}" class="btn btn-warning">PLAN A CAMP</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% elif data['bank'] %}
+		<h1><u><b>REGISTERED BLOOD BANKS</b></u></h1>
+	<form>
+		<table class="table" style="width:500px">
+			<tr>
+				<th>Sno</th>
+				<th>NAME</th>
+				<th>PLACE</th>
+				<th>LATITUDE</th>
+				<th>LONGITUDE</th>
+				<th>PHONE</th>
+				<th>EMAIL</th>
+			</tr>
+			{% for row in data['bank'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['bankname']}}</td>
+				<td>{{row['place']}}</td>
+				<td>{{row['latitude']}}</td>
+				<td>{{row['longitude']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				<td><a href="organization_Manage_Camp?action=blood_bank&id={{row['bank_id']}}" class="btn btn-warning">PLAN A CAMP</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% elif data['camp'] %}
+		<table  class="table" style="width:900px">
+			<h1><u><b>PLANED CAMP</b></u></h1>
+			<tr>
+			<th>SNO</th>
+			<th>ALOCATED IN</th>
+			
+			<th>DATE</th>
+			<th>TIME</th>
+			<th>LATITUDE</th>
+			<th>LONGITUDE</th>
+
+		</tr>
+		{% for row in data['camp'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['allocate']}}({{row['allocates_type']}})</td>
+			
+			<td>{{row['date']}}</td>
+			<td>{{row['time']}}</td>
+			<td>{{row['latitude']}}</td>
+			<td>{{row['longitude']}}</td>
+			<td><a href="?action=update&id={{row['camp_id']}}" class="btn btn-warning">UPDATE CAMP</a></td>
+			<td><a href="organization_camp_blood?action=camp_blood&id={{row['camp_id']}}" class="btn btn-success">UPDATE BLOOD COLLECTION REPORT</a></td>
+		</tr>
+		{% endfor %}
+		</table>
+		{% elif data['up'] %}
+		<form method="post">
+		<h1><u><b>ENTER YOUR CAMP DETAILS</b></u></h1>
+		<table>
+			<tr>
+				<th>
+					
+				<table>
+			<tr>
+				<th>DATE</th>
+				<td><input type="date" name="date" required="" class="form-control" value="{{data['up'][0]['date']}}"></td>
+			</tr>
+			<tr>
+				<th>TIME</th>
+				<td><input type="time" name="time" required="" class="form-control"  value="{{data['up'][0]['time']}}"></td>
+			</tr>
+			<tr>
+                <th>LATITUDE</th>
+                <td><input type="text" name="latitude" id="lati" required="" class="form-control"  value="{{data['up'][0]['latitude']}}"></td>
+            </tr>
+            <tr>
+                <th>LONGITUDE</th>
+                <td><input type="twxt" name="longitude" id="longi" required="" class="form-control"  value="{{data['up'][0]['longitude']}}">
+                    <td><a onclick="myFunction();">View Map</a></td>
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-warning"></td>
+            </tr>
+		</table>
+		</th>
+		<td>
+			<div id="dvMap" style="width: 600px; height: 400px"></div>
+		</td>
+			</tr>
+		</table>
+	</form>
+		{% endif %}
+</center>
+{% include 'footer.html' %}

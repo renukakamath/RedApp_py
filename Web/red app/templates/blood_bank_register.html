@@ -1,0 +1,57 @@
+{% include 'public_header.html' %}
+<center>
+	<form method="post">
+		<h1><u><b>BLOOD BANK REGISTRATION</b></u></h1>
+		<table>
+			<tr>
+				<th>
+				
+		<table class="table" style="width: 500px">
+			<tr>
+				<th>BANK NAME</th>
+				<td><input type="text" name="name"  class="form-control" required></td>
+			</tr>
+			<tr>
+				<th>PLACE</th>
+				<td><input type="text" name="place"  class="form-control" required></td>
+			</tr>
+			<tr>
+                <th>LATITUDE</th>
+                <td><input type="text" name="latitude" id="lati" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>LONGITUDE</th>
+                <td><input type="twxt" name="longitude" id="longi" class="form-control" required>
+                    <td><a onclick="myFunction();">View Map</a></td>
+                </td>
+            </tr>
+            <tr>
+            	<th>PHONE</th>
+            	<td><input type="text" name="number"  class="form-control" required pattern="[0-9]{10}"></td>
+            </tr>
+            <tr>
+            	<th>EMAIL</th>
+            	<td><input type="email" name="email"  class="form-control" required></td>
+            </tr>
+            <tr>
+            	<th>USER NAME</th>
+            	<td><input type="text" name="uname" class="form-control" required></td>
+            </tr>
+            <tr>
+            	<th>PASSWORD</th>
+            	<td><input type="password" name="pwd" class="form-control" required></td>
+            </tr>
+            <tr>
+            	<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-success"></td>
+            </tr>
+		</table>
+
+				</th>
+				<td>
+					<div id="dvMap" style="width: 600px; height: 400px"></div>
+				</td>
+			</tr>
+		</table>
+	</form>
+</center>
+{% include 'footer.html' %}

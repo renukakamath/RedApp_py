@@ -1,0 +1,53 @@
+{% include 'admin_header.html' %}
+<center>
+	{% if data['available'] %}
+	<h1><u><b>AVAILABLE BLOOD</b></u></h1>
+	<table  class="table" style="width:500px">
+		<tr>
+			<th>SNO</th>
+			<!-- <TH>DONORS</TH> -->
+			<th>BLOOD GROUP</th>
+			<th>COLLECTIONS (liters)</th>
+			<th>DATE TIME</th>
+
+		</tr>
+		{% for row in data['available'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<!-- <TD>{{row['first_name']}}</TD> -->
+			<td>{{row['group']}}</td>
+			<td>{{row['stock']}}</td>
+			<td>{{row['date_time']}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	{% else %}
+<h1><u><b>REGISTERED BLOOD BANKS</b></u></h1>
+	<form>
+		<table class="table" style="width:500px">
+			<tr>
+				<th>Sno</th>
+				<th>NAME</th>
+				<th>PLACE</th>
+				<th>LATITUDE</th>
+				<th>LONGITUDE</th>
+				<th>PHONE</th>
+				<th>EMAIL</th>
+			</tr>
+			{% for row in data['res']%}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['bankname']}}</td>
+				<td>{{row['place']}}</td>
+				<td>{{row['latitude']}}</td>
+				<td>{{row['longitude']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				<td><a href="?action=available&id={{row['bank_id']}}" class="btn btn-warning">AVAILABILITY</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+	</form>
+</center>
+{% include 'footer.html' %}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Donerhome">
+    <Button
+        android:id="@+id/donpro"
+        android:layout_width="140dp"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:layout_marginBottom="15dp"
+        android:text="User Profile" />
+
+
+    <Button
+        android:id="@+id/Dbt_camps"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_bg"
+        android:text="Camps"
+        android:textColor="#fff" />
+
+
+    <Button
+        android:id="@+id/bt_requirement"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_bg"
+        android:text="View Requirement"
+        android:textColor="#fff" />
+
+
+
+    <Button
+        android:id="@+id/don"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_bg"
+        android:text="View Donations"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/Dbt_logout"
+        android:layout_width="140dp"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:text="Logout" />
+
+
+</LinearLayout>

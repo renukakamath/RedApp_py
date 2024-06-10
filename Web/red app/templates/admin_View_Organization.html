@@ -1,0 +1,49 @@
+{% include 'admin_header.html' %}
+<center>
+	{% if data['camp'] %}
+	<h1><u><b>View Camp</b></u></h1>
+	<table  class="table" style="width:500px">
+		<tr>
+			<th>SNO</th>
+			<th>ALOCATED IN</th>
+			
+			<th>DATE</th>
+			<th>TIME</th>
+			<th>LATITUDE</th>
+			<th>LONGITUDE</th>
+
+		</tr>
+		{% for row in data['camp'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['ALOCATE']}}({{row['allocates_type']}})</td>
+			
+			<td>{{row['date']}}</td>
+			<td>{{row['time']}}</td>
+			<td>{{row['latitude']}}</td>
+			<td>{{row['longitude']}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	{% else %}
+	<h1><u><b>REGISTERED ORGANIZATION</b></u></h1>
+	<table class="table" style="width:500px">
+		<tr>
+			<th>SNO</th>
+			<th>NAME</th>
+			<th>PHONE</th>
+			<th>EMAIL</th>
+		</tr>
+		{% for row in data['org'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['organization_name']}}</td>
+			<td>{{row['phone']}}</td>
+			<td>{{row['email']}}</td>
+			<td><a href="?action=camp&id={{row['organisation_id']}}" class="btn btn-warning">CAMP</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	{% endif %}
+</center>
+{% include 'footer.html' %}
